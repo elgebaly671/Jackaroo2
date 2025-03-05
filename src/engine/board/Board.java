@@ -1,9 +1,7 @@
 package engine.board;
 import engine.GameManager;
-import model.Colour;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import engine.board.Cell; 
+import model.Colour; 
   
 
 public class Board implements BoardManager {
@@ -23,7 +21,7 @@ public class Board implements BoardManager {
         {if (i%25==0)                               //the base cells are seprated by 25 cells, therofore if we start counting from cell Zero and make it a base cell, then every 25th cell will be a base cell.
          {track.add(new Cell(CellType.BASE));}
         else 
-            {if (i==2 || i==27 || i==52 || i==77)   //the safe cells ENTRY are at 2,27,52,77
+            {if (i==23 || i==48 || i==73 || i==98)   //the safe cells ENTRY are at 23,48,73,98
              {track.add(new Cell(CellType.ENTRY));}
             else
                 {track.add(new Cell(CellType.NORMAL));}}   //the normal cells are the rest of the cells
