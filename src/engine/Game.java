@@ -47,18 +47,18 @@ public class Game implements GameManager {
 
         //initialise players
         this.players = new ArrayList<>();
-        players.add(new Player(playerName, colours[0])); // Human player gets first colour
+        players.add(new Player(playerName, colours[0]));
 
         for (int i = 1; i < colours.length; i++) {
-            players.add(new CPU("CPU " + i, colours[i], board)); // CPU players get the rest
+            players.add(new CPU("CPU " + i, colours[i], board));
         }
 
-        // Step 6: Manually Deal 4 Cards to Each Player (One by One)
-            for (int i = 0; i < players.size(); i++) { // Loop through each player
-                players.get(i).getHand().addAll(Deck.drawCards()); // Add card to player's hand
+        //Deal cards
+            for (int i = 0; i < players.size(); i++) {
+                players.get(i).getHand().addAll(Deck.drawCards());
             }
 
-        // Step 7: Initialize Other Attributes
+        //Initialise rest of game
         this.firePit = new ArrayList<>();
         this.currentPlayerIndex = 0;
         this.turn = 0;
